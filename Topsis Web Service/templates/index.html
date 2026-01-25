@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TOPSIS Web Application</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #141e30, #243b55);
+            margin: 0;
+            padding: 0;
+            color: white;
+        }
+
+        .container {
+            width: 420px;
+            margin: 80px auto;
+            background-color: #1f2933;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.5);
+        }
+
+        h2 {
+            text-align: center;
+            color: #00e6e6;
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+        }
+
+        input, button {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        button {
+            margin-top: 25px;
+            background-color: #00e6e6;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #00cccc;
+        }
+
+        .note {
+            font-size: 12px;
+            margin-top: 15px;
+            color: #ccc;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <h2>TOPSIS Web Service</h2>
+
+    <form method="POST" enctype="multipart/form-data">
+        <label>Upload Excel File</label>
+        <input type="file" name="file" required>
+
+        <label>Weights (comma separated)</label>
+        <input type="text" name="weights" placeholder="1,1,1,1,1" required>
+
+        <label>Impacts (+ or -)</label>
+        <input type="text" name="impacts" placeholder="+,+,-,+,+" required>
+
+        <label>Email Address</label>
+        <input type="email" name="email" placeholder="example@gmail.com" required>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <p class="note">
+        Result file will be emailed and stored in the results folder.
+    </p>
+</div>
+</body>
+</html>
